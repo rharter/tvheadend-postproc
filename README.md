@@ -4,8 +4,8 @@ TV Show post processing script for TVHeadend.  The rename.py script uses the vid
 
 ## TODO
 
-I'd like to add commercial detection and removal to the script
-Better handle errors or missing meta data
+* I'd like to add commercial detection and removal to the script
+* Better handle errors or missing meta data
 
 ## Usage
 
