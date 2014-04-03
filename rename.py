@@ -6,8 +6,7 @@ from pprint import pprint
 def main():
 	"""Main entry point for the script."""
 	file = sys.argv[1]
-	file_path = sys.argv[2]
-	out_path = sys.argv[3]
+	out_path = sys.argv[2]
 
 	title = get_show_title(file)
 	print "Title: " + title
@@ -21,11 +20,14 @@ def main():
 	name = build_file_name(title, season_num, episode_num)
 	print "Renaming to: " + name
 
-	path, ext = os.path.splitext(file_path)
-	new_path = os.path.join(out_path, name + ext)
+	path, ext = os.path.splitext(file)
+	new_path = os.path.join(out_path, title)
+	os.makedirs(new_path)
 
-	print "Moving file[" + file_path + "] to: " + new_path
-	shutil.move(file_path, new_path)
+	new_path = os.path.join(new_path, name + ext)
+
+	print "Moving file[" + file + "] to: " + new_path
+	shutil.move(file, new_path)
 
 
 def get_show_title(file):
